@@ -4,9 +4,10 @@ apache2:
     - name: apache2
   service.running:
     - enable: true
-add_permisison:
-  cmd.run:
-    - name: sudo chmod +x /srv/salt/web1/conf/programans.sh
+
+#add_permisison:
+#  cmd.run:
+#    - name: sudo chmod +x /srv/salt/web1/conf/programans.sh
 
 install programs:
   cmd.script:
@@ -45,7 +46,7 @@ enable site:
 
 apache2 restart:
   cmd.run:
-    - reload: sudo systemctl reload apache2
+    - reload: sudo systemctl restart apache2
 
 /var/www/html/index.html:
   file.managed:
